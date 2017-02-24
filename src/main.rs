@@ -47,15 +47,18 @@ fn main() {
 	let mut itt = input.trim().parse::<i32>().expect("invalid input");
 	let mut old_num = 0;
 	let mut new_num = 0;
+	let mut greens = 0;
 	while(itt != 0){
 		random = range.ind_sample(&mut rng);
 		old = factory_1994(random);
 		random = range.ind_sample(&mut rng);
 		new = factory_1996(random);
-		if(old == "Yellow"){old_num += 1;}
-		if(new == "Yellow"){new_num += 1;}
+		if(old == "Green" && new == "Yellow"|| new == "Green" && old == "Yellow" ){greens += 1;}
+		if(old == "Yellow" && new == "Green" ){old_num += 1;}
+		if(old == "Green" && new == "Yellow"){new_num += 1;}
 		itt -= 1;
 	}
+	println!("Total Greens: {}", greens);
 	println!("Old Yellows: {}", old_num);
         println!("New Yellows: {}", new_num);
 
