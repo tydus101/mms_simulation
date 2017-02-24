@@ -1,0 +1,6 @@
+[package]
+name = "mms"
+version = "0.1.0"
+authors = ["tydus101 <trr4652@rit.edu>"]
+[dependencies]
+rand = "0.3.0"
